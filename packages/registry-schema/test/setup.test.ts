@@ -1,8 +1,16 @@
 import { describe, it, expect } from 'vitest';
+import {
+  SnippetConfigSchema,
+  RegistryItemSchema,
+  ManifestSchema,
+  ErrorCode,
+} from '../src/index.js';
 
-describe('registry-schema', () => {
-  it('exports version', async () => {
-    const mod = await import('../src/index.js');
-    expect(mod.VERSION).toBe('0.0.0');
+describe('registry-schema exports', () => {
+  it('exports schema validators', () => {
+    expect(SnippetConfigSchema).toBeDefined();
+    expect(RegistryItemSchema).toBeDefined();
+    expect(ManifestSchema).toBeDefined();
+    expect(ErrorCode).toBeDefined();
   });
 });

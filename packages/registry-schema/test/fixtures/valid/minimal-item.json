@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "name": "sleep",
+  "version": "1.0.0",
+  "summary": "Delay execution for a given duration",
+  "tags": ["async", "timer", "utility"],
+  "language": "ts",
+  "environments": ["node", "browser"],
+  "exports": [{ "name": "sleep", "kind": "function" }],
+  "files": [
+    {
+      "path": "sleep.ts",
+      "content": "export async function sleep(ms: number): Promise<void> {\n  return new Promise((resolve) => setTimeout(resolve, ms));\n}",
+      "sha256": "aa9f16b8968ff0c12a5da7d9ca68561026565a9e4d5da955ab5a3a02422cabb1"
+    }
+  ],
+  "dependencies": [],
+  "templateVariables": [],
+  "license": { "spdx": "MIT", "source": "original" },
+  "tests": [{ "path": "sleep.test.ts", "content": "import { sleep } from './sleep';" }],
+  "docs": {
+    "usage": "await sleep(1000);",
+    "caveats": ["Timer accuracy depends on the environment"]
+  }
+}

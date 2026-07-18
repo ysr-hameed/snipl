@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "name": "retry",
+  "version": "1.2.0",
+  "summary": "Retry an async operation with backoff",
+  "tags": ["async", "retry", "resilience"],
+  "language": "ts",
+  "environments": ["node", "browser", "universal"],
+  "exports": [
+    { "name": "retry", "kind": "function" },
+    { "name": "RetryOptions", "kind": "type" },
+    { "name": "RetryError", "kind": "class" }
+  ],
+  "files": [
+    {
+      "path": "retry.ts",
+      "content": "export class RetryError extends Error {}",
+      "sha256": "53b6d53f8dfc6f6b64a5f4fe9c88df4158bfc672383abeb931fb369b19e8f83b"
+    },
+    {
+      "path": "backoff.ts",
+      "content": "export function exponentialBackoff(attempt: number): number {}",
+      "sha256": "f581dc804c980c0012607546dd78af4977e13526efc3f6a33e9ae58593f3a11d"
+    }
+  ],
+  "dependencies": [],
+  "templateVariables": [],
+  "license": { "spdx": "MIT", "source": "original" },
+  "tests": [
+    { "path": "retry.test.ts", "content": "import { retry } from './retry';" },
+    { "path": "backoff.test.ts", "content": "import { exponentialBackoff } from './backoff';" }
+  ],
+  "docs": {
+    "usage": "const result = await retry(fetchData);",
+    "caveats": ["Does not support cancellation in v1"]
+  }
+}

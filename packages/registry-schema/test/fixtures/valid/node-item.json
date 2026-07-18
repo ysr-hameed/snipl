@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "name": "read-file-safe",
+  "version": "1.0.0",
+  "summary": "Read a file without throwing",
+  "tags": ["file", "node", "io"],
+  "language": "js",
+  "environments": ["node"],
+  "exports": [{ "name": "readFileSafe", "kind": "function" }],
+  "files": [
+    {
+      "path": "read-file-safe.js",
+      "content": "const fs = require('fs');",
+      "sha256": "24133e8118fecd85ad64e78b80be4221a1bbe91df2827fed0e1fd9dd63055942"
+    }
+  ],
+  "dependencies": [],
+  "templateVariables": [],
+  "license": { "spdx": "MIT", "source": "original" },
+  "tests": [
+    {
+      "path": "read-file-safe.test.js",
+      "content": "const { readFileSafe } = require('./read-file-safe');"
+    }
+  ],
+  "docs": {
+    "usage": "const contents = await readFileSafe('/path/to/file');",
+    "caveats": ["Only for Node.js environments"]
+  }
+}

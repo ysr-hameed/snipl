@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "name": "sleep",
+  "version": "1.0.0",
+  "summary": "Delay execution for a given duration",
+  "tags": [],
+  "language": "ts",
+  "environments": ["node"],
+  "exports": [],
+  "files": [{ "path": "sleep.ts", "content": "export const a = 1;", "sha256": "not-a-valid-hash" }],
+  "dependencies": [],
+  "templateVariables": [],
+  "license": { "spdx": "MIT", "source": "original" },
+  "tests": [],
+  "docs": { "usage": "test", "caveats": [] }
+}

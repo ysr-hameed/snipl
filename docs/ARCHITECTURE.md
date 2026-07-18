@@ -69,7 +69,24 @@ atomic manifest update
 
 Path rules: resolve all targets relative to the chosen project root; reject absolute paths, `..` traversal, symlink escapes, and writes outside the configured output directory. Use temporary files in the target directory and rename them atomically where supported. If a multi-file write fails, report exactly what changed and preserve recovery information; design the writer to preflight all collisions before the first write.
 
-## Manifest contract
+## Canonical snippets.json (project config)
+
+```json
+{
+  "$schema": "https://snipl.dev/schema/config-v1.json",
+  "output": "src/snippets",
+  "language": "ts",
+  "registries": [{ "name": "official", "source": "builtin" }]
+}
+```
+
+Default config applied when `init` is run without arguments:
+
+- `output`: `src/snippets`
+- `language`: `ts` (TypeScript)
+- `registries`: single built-in official registry
+
+## Canonical .snipl/manifest.json (installation record)
 
 ```json
 {
@@ -80,13 +97,22 @@ Path rules: resolve all targets relative to the chosen project root; reject abso
       "name": "retry",
       "version": "1.0.0",
       "installedAt": "2026-07-18T00:00:00.000Z",
-      "files": [{ "path": "src/snippets/retry.ts", "sha256": "..." }]
+      "files": [
+        {
+          "path": "src/snippets/retry.ts",
+          "sha256": "53b6d53f8dfc6f6b64a5f4fe9c88df4158bfc672383abeb931fb369b19e8f83b"
+        },
+        {
+          "path": "src/snippets/backoff.ts",
+          "sha256": "f581dc804c980c0012607546dd78af4977e13526efc3f6a33e9ae58593f3a11d"
+        }
+      ]
     }
   ]
 }
 ```
 
-`status` computes current hashes without changing files. A hash mismatch means **modified**, not an error and not a reason to overwrite.
+`schemaVersion` is always `1` for MVP. `status` compares recorded SHA-256 hashes with disk contents without changing files. A hash mismatch means **modified**, not an error and not a reason to overwrite.
 
 ## Quality gates
 

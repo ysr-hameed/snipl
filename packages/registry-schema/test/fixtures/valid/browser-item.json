@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "name": "copy-to-clipboard",
+  "version": "0.1.0",
+  "summary": "Copy text to the system clipboard",
+  "tags": ["clipboard", "browser", "dom"],
+  "language": "ts",
+  "environments": ["browser"],
+  "exports": [{ "name": "copyToClipboard", "kind": "function" }],
+  "files": [
+    {
+      "path": "clipboard.ts",
+      "content": "export async function copyToClipboard(text: string): Promise<boolean> {}",
+      "sha256": "8fb920239e36b067d3586f9764d886aabf56878fb451d64e58c303f2b336b0c1"
+    }
+  ],
+  "dependencies": [],
+  "templateVariables": [],
+  "license": { "spdx": "MIT", "source": "original" },
+  "tests": [
+    { "path": "clipboard.test.ts", "content": "import { copyToClipboard } from './clipboard';" }
+  ],
+  "docs": {
+    "usage": "await copyToClipboard('hello');",
+    "caveats": ["Requires browser Clipboard API", "May require user gesture"]
+  }
+}

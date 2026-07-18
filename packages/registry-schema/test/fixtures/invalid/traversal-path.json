@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "name": "sleep",
+  "version": "1.0.0",
+  "summary": "Delay execution for a given duration",
+  "tags": [],
+  "language": "ts",
+  "environments": ["node"],
+  "exports": [],
+  "files": [
+    {
+      "path": "../../etc/passwd",
+      "content": "should not be allowed",
+      "sha256": "9e0f872e7d3ff4fdd53d68d9f986005b546a8af092365e49cfbc016fac154427"
+    }
+  ],
+  "dependencies": [],
+  "templateVariables": [],
+  "license": { "spdx": "MIT", "source": "original" },
+  "tests": [],
+  "docs": { "usage": "test", "caveats": [] }
+}

@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "name": "deep-clone",
+  "version": "1.0.0",
+  "summary": "Deep clone a value",
+  "tags": [],
+  "language": "ts",
+  "environments": ["node"],
+  "exports": [],
+  "files": [
+    {
+      "path": "deep-clone.ts",
+      "content": "export const a = 1;",
+      "sha256": "683314ed22112e8dea8095c8c6173afa2c61279f5fe07968ebe0e21fff16871d"
+    }
+  ],
+  "dependencies": [],
+  "templateVariables": [],
+  "license": { "spdx": "MIT", "source": "derived" },
+  "tests": [],
+  "docs": { "usage": "test", "caveats": [] }
+}

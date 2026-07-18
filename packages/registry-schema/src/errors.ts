@@ -1,0 +1,48 @@
+export const ErrorCode = {
+  INVALID_SCHEMA_VERSION: 'INVALID_SCHEMA_VERSION',
+  INVALID_NAME: 'INVALID_NAME',
+  INVALID_VERSION: 'INVALID_VERSION',
+  INVALID_HASH: 'INVALID_HASH',
+  INVALID_PATH: 'INVALID_PATH',
+  INVALID_PATH_TRAVERSAL: 'INVALID_PATH_TRAVERSAL',
+  INVALID_PATH_ABSOLUTE: 'INVALID_PATH_ABSOLUTE',
+  INVALID_LICENSE: 'INVALID_LICENSE',
+  INVALID_LICENSE_SOURCE: 'INVALID_LICENSE_SOURCE',
+  INVALID_ENVIRONMENT: 'INVALID_ENVIRONMENT',
+  INVALID_LANGUAGE: 'INVALID_LANGUAGE',
+  INVALID_EXPORT_KIND: 'INVALID_EXPORT_KIND',
+  INVALID_CONTENT_EMPTY: 'INVALID_CONTENT_EMPTY',
+  DUPLICATE_FILE_PATH: 'DUPLICATE_FILE_PATH',
+  DEPENDENCIES_NOT_EMPTY: 'DEPENDENCIES_NOT_EMPTY',
+  TEMPLATE_VARIABLES_NOT_EMPTY: 'TEMPLATE_VARIABLES_NOT_EMPTY',
+  MISSING_REQUIRED_FIELD: 'MISSING_REQUIRED_FIELD',
+  MALFORMED_JSON: 'MALFORMED_JSON',
+  ATTRIBUTION_REQUIRED: 'ATTRIBUTION_REQUIRED',
+  INVALID_SPDX: 'INVALID_SPDX',
+  INVALID_REGISTRY_SOURCE: 'INVALID_REGISTRY_SOURCE',
+  INVALID_DATE: 'INVALID_DATE',
+  ARRAY_SIZE_EXCEEDED: 'ARRAY_SIZE_EXCEEDED',
+  INVALID_TAG: 'INVALID_TAG',
+} as const;
+
+export type ErrorCodeType = (typeof ErrorCode)[keyof typeof ErrorCode];
+
+export class ValidationError extends Error {
+  public readonly code: ErrorCodeType;
+  public readonly path: string;
+
+  constructor(code: ErrorCodeType, message: string, path: string) {
+    super(message);
+    this.name = 'ValidationError';
+    this.code = code;
+    this.path = path;
+  }
+
+  toJSON(): { code: ErrorCodeType; message: string; path: string } {
+    return {
+      code: this.code,
+      message: this.message,
+      path: this.path,
+    };
+  }
+}

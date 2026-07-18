@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "name": "deep-clone",
+  "version": "1.0.0",
+  "summary": "Deep clone a value",
+  "tags": ["clone", "utility", "object"],
+  "language": "ts",
+  "environments": ["node", "browser", "universal"],
+  "exports": [{ "name": "deepClone", "kind": "function" }],
+  "files": [
+    {
+      "path": "deep-clone.ts",
+      "content": "export function deepClone<T>(value: T): T {}",
+      "sha256": "5076d49d50879bcf9453c5163a4300f04d50f0298d6a36d339eb5b970631a6ae"
+    }
+  ],
+  "dependencies": [],
+  "templateVariables": [],
+  "license": {
+    "spdx": "BSD-3-Clause",
+    "source": "derived",
+    "attribution": "Based on lodash.clonedeep (John-David Dalton)"
+  },
+  "tests": [
+    { "path": "deep-clone.test.ts", "content": "import { deepClone } from './deep-clone';" }
+  ],
+  "docs": {
+    "usage": "const cloned = deepClone(original);",
+    "caveats": ["Does not handle circular references"]
+  }
+}
