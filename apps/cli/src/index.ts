@@ -80,45 +80,57 @@ cli
     process.exit(exitCode);
   });
 
-cli.command('list', 'List all available items').action((options: GlobalOptions) => {
+function withCwd<T>(options: GlobalOptions, fn: (cwd: string) => T): T {
   const opts = parseGlobalOptions(options);
-  const resolver = new BuiltinRegistryResolver();
-  try {
-    const exitCode = listCommand(resolver, { json: opts.json ?? false } satisfies ListOptions);
-    process.exit(exitCode);
-  } catch (err) {
-    handleError(err, opts.json ?? false);
-  }
-});
+  const cwd = resolveCwd(opts.cwd ?? '.');
+  return fn(cwd);
+}
 
-cli
-  .command('search <query>', 'Search for items')
-  .action((query: string, options: GlobalOptions) => {
+cli.command('list', 'List all available items').action((options: GlobalOptions) => {
+  withCwd(options, () => {
     const opts = parseGlobalOptions(options);
     const resolver = new BuiltinRegistryResolver();
     try {
-      const exitCode = searchCommand(resolver, {
-        query,
-        json: opts.json ?? false,
-      } satisfies SearchOptions);
+      const exitCode = listCommand(resolver, { json: opts.json ?? false } satisfies ListOptions);
       process.exit(exitCode);
     } catch (err) {
       handleError(err, opts.json ?? false);
     }
   });
+});
+
+cli
+  .command('search <query>', 'Search for items')
+  .action((query: string, options: GlobalOptions) => {
+    withCwd(options, () => {
+      const opts = parseGlobalOptions(options);
+      const resolver = new BuiltinRegistryResolver();
+      try {
+        const exitCode = searchCommand(resolver, {
+          query,
+          json: opts.json ?? false,
+        } satisfies SearchOptions);
+        process.exit(exitCode);
+      } catch (err) {
+        handleError(err, opts.json ?? false);
+      }
+    });
+  });
 
 cli.command('view <name>', 'View item details').action((name: string, options: GlobalOptions) => {
-  const opts = parseGlobalOptions(options);
-  const resolver = new BuiltinRegistryResolver();
-  try {
-    const exitCode = viewCommand(resolver, {
-      name,
-      json: opts.json ?? false,
-    } satisfies ViewOptions);
-    process.exit(exitCode);
-  } catch (err) {
-    handleError(err, opts.json ?? false);
-  }
+  withCwd(options, () => {
+    const opts = parseGlobalOptions(options);
+    const resolver = new BuiltinRegistryResolver();
+    try {
+      const exitCode = viewCommand(resolver, {
+        name,
+        json: opts.json ?? false,
+      } satisfies ViewOptions);
+      process.exit(exitCode);
+    } catch (err) {
+      handleError(err, opts.json ?? false);
+    }
+  });
 });
 
 cli.help();
