@@ -1,0 +1,8 @@
+# Normalize to LF across all platforms
+* text=auto eol=lf
+
+# Binary files
+*.png binary
+*.jpg binary
+*.gz binary
+*.tgz binary
