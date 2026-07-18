@@ -2,6 +2,22 @@
   "name": "@snipl/root",
   "private": true,
   "type": "module",
+  "description": "snipl — install verified TypeScript utility snippets into any project. Zero-dependency source ownership with integrity guarantees.",
+  "keywords": [
+    "snippet",
+    "snippets",
+    "typescript",
+    "cli",
+    "utility",
+    "sleep",
+    "retry",
+    "debounce",
+    "throttle",
+    "memoize",
+    "deep-clone",
+    "clamp",
+    "slugify"
+  ],
   "packageManager": "pnpm@11.13.0",
   "engines": {
     "node": ">=22.0.0",
@@ -16,7 +32,7 @@
     "test:coverage": "vitest run --coverage",
     "build": "tsc -b",
     "pack:cli": "pnpm --filter @snipl/cli pack",
-    "test:e2e": "vitest run --config vitest.e2e.config.ts"
+    "test:e2e": "bash scripts/test-e2e.sh"
   },
   "devDependencies": {
     "@types/node": "^22.0.0",

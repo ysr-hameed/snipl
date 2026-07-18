@@ -1,8 +1,27 @@
 {
   "name": "@snipl/core",
-  "version": "0.0.0",
-  "private": true,
+  "version": "1.0.1",
+  "private": false,
   "type": "module",
+  "license": "MIT",
+  "description": "Core engine for snipl — config loading, install planning, file writer, manifest management, and registry resolution for verified TypeScript snippets.",
+  "keywords": [
+    "snippet",
+    "snippets",
+    "typescript",
+    "utility",
+    "source-code",
+    "developer-tools",
+    "install",
+    "file-writer"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ysr-hameed/snipl.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ysr-hameed/snipl/issues"
+  },
   "main": "./dist/src/index.js",
   "types": "./src/index.ts",
   "exports": {
@@ -36,5 +55,8 @@
   "devDependencies": {
     "typescript": "^5.7.0",
     "vitest": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=22.0.0"
   }
 }
