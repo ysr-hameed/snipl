@@ -174,7 +174,7 @@ cli.command('status', 'Check installed items').action((options: GlobalOptions) =
 });
 
 cli.help();
-cli.version('0.0.0');
+cli.version('1.0.0');
 
 function handleError(err: unknown, json: boolean): void {
   const message = err instanceof Error ? err.message : String(err);

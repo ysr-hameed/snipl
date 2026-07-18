@@ -264,7 +264,7 @@ fi
 # ============================================
 echo "=== TEST 16: --version ==="
 OUTPUT=$($CLI --version 2>&1)
-if echo "$OUTPUT" | grep -q "0.0.0"; then
+if echo "$OUTPUT" | grep -Eq "snipl/[0-9]+\.[0-9]+\.[0-9]"; then
   pass "--version shows version number"
 else
   fail "--version shows version number" "$OUTPUT"
