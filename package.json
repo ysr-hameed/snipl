@@ -35,11 +35,11 @@
     "test:e2e": "bash scripts/test-e2e.sh"
   },
   "devDependencies": {
-    "@types/node": "^22.0.0",
-    "eslint": "^9.0.0",
+    "@types/node": "^26.1.1",
+    "eslint": "^10.7.0",
     "prettier": "^3.0.0",
-    "typescript": "^5.7.0",
+    "typescript": "^7.0.2",
     "typescript-eslint": "^8.0.0",
-    "vitest": "^3.0.0"
+    "vitest": "^4.1.10"
   }
 }
