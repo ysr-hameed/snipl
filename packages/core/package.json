@@ -15,7 +15,8 @@
     "test": "vitest run"
   },
   "dependencies": {
-    "@snipl/registry-schema": "workspace:*"
+    "@snipl/registry-schema": "workspace:*",
+    "@snipl/official-registry": "workspace:*"
   },
   "devDependencies": {
     "typescript": "^5.7.0",

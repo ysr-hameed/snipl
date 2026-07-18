@@ -1,7 +1,16 @@
 import tseslint from 'typescript-eslint';
 
 export default tseslint.config(
-  { ignores: ['**/dist/**', '**/coverage/**', '*.config.*', '**/node_modules/**'] },
+  {
+    ignores: [
+      '**/dist/**',
+      '**/coverage/**',
+      '*.config.*',
+      '**/node_modules/**',
+      'demo-project/**',
+      'packages/official-registry/src/items/**',
+    ],
+  },
   {
     extends: [...tseslint.configs.recommendedTypeChecked, ...tseslint.configs.stylisticTypeChecked],
     languageOptions: {

@@ -50,6 +50,9 @@ importers:
 
   packages/core:
     dependencies:
+      '@snipl/official-registry':
+        specifier: workspace:*
+        version: link:../official-registry
       '@snipl/registry-schema':
         specifier: workspace:*
         version: link:../registry-schema
