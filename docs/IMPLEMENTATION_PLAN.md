@@ -283,8 +283,8 @@ Do not add a module just because it is popular. For example, a `format-date` sni
 
 - [ ] Recruit 20–30 consented beta users, ideally including five monorepo users and five Windows users.
 - [ ] Publish a prerelease package (`@next`) and a short beta guide with known limitations and a security-report channel.
-- [ ] Test operating systems in CI: Linux, macOS, and Windows. Include spaces, Unicode, and case-sensitivity scenarios in paths.
-- [ ] Run compatibility fixtures: plain Node TS, Vite TS, Next.js TS, root-level source, and a package inside a pnpm workspace.
+- [x] Test operating systems in CI: Linux, macOS, and Windows. Include spaces, Unicode, and case-sensitivity scenarios in paths.
+- [x] Run compatibility fixtures: plain Node TS, Vite TS, Next.js TS, root-level source, and a package inside a pnpm workspace.
 - [ ] Offer opt-in, event-only telemetry or a feedback form. Never send source code, paths, configs, command arguments containing paths, or environment variables.
 - [ ] Triage feedback weekly into bugs, usability changes, catalogue requests, and non-goals. Record product decisions, not just issue comments.
 - [ ] Fix every data-loss, integrity, path, license, or incorrect-documentation issue before stable release.

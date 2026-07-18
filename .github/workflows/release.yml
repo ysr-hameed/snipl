@@ -4,9 +4,13 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: 'Version bump (patch, minor, major)'
+        description: 'Version bump (prerelease, patch, minor, major)'
         required: true
-        default: 'patch'
+        default: 'prerelease'
+      distTag:
+        description: 'npm dist-tag (next, latest)'
+        required: true
+        default: 'next'
 
 jobs:
   release:
@@ -29,11 +33,12 @@ jobs:
       - run: pnpm test
       - run: pnpm build
       - run: pnpm pack:cli
+      - run: bash scripts/test-e2e.sh
       - run: |
           git config user.name "snipl release"
           git config user.email "release@snipl.dev"
           npm version ${{ github.event.inputs.version }} --workspaces --include-workspace-root
           git push --follow-tags
-      - run: pnpm publish -r --provenance --access public
+      - run: pnpm publish -r --provenance --access public --tag ${{ github.event.inputs.distTag }}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

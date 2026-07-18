@@ -16,7 +16,7 @@
     "test:coverage": "vitest run --coverage",
     "build": "tsc -b",
     "pack:cli": "pnpm --filter @snipl/cli pack",
-    "test:e2e": "vitest run --config vitest.e2e.config.ts"
+    "test:e2e": "bash scripts/test-e2e.sh"
   },
   "devDependencies": {
     "@types/node": "^22.0.0",

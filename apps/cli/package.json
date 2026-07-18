@@ -1,8 +1,16 @@
 {
   "name": "@snipl/cli",
-  "version": "0.0.0",
-  "private": true,
+  "version": "1.0.0-next.0",
+  "private": false,
   "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ysr-hameed/snipl.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ysr-hameed/snipl/issues"
+  },
   "bin": {
     "snipl": "./dist/src/index.js"
   },
@@ -24,5 +32,8 @@
     "@types/node": "^22.20.1",
     "typescript": "^5.7.0",
     "vitest": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=22.0.0"
   }
 }
