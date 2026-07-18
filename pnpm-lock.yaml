@@ -31,7 +31,16 @@ importers:
       '@snipl/core':
         specifier: workspace:*
         version: link:../../packages/core
+      '@snipl/registry-schema':
+        specifier: workspace:*
+        version: link:../../packages/registry-schema
+      cac:
+        specifier: ^7.0.0
+        version: 7.0.0
     devDependencies:
+      '@types/node':
+        specifier: ^22.20.1
+        version: 22.20.1
       typescript:
         specifier: ^5.7.0
         version: 5.9.3
@@ -881,6 +890,13 @@ packages:
         integrity: sha512-b6Ilus+c3RrdDk+JhLKUAQfzzgLEPy6wcXqS7f/xe1EETvsDP6GORG7SFuOs6cID5YkqchW/LXZbX5bc8j7ZcQ==,
       }
     engines: { node: '>=8' }
+
+  cac@7.0.0:
+    resolution:
+      {
+        integrity: sha512-tixWYgm5ZoOD+3g6UTea91eow5z6AAHaho3g0V9CNSNb45gM8SmflpAc+GRd1InC4AqN/07Unrgp56Y94N9hJQ==,
+      }
+    engines: { node: '>=20.19.0' }
 
   callsites@3.1.0:
     resolution:
@@ -2091,6 +2107,8 @@ snapshots:
       balanced-match: 4.0.4
 
   cac@6.7.14: {}
+
+  cac@7.0.0: {}
 
   callsites@3.1.0: {}
 

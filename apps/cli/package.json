@@ -4,17 +4,20 @@
   "private": true,
   "type": "module",
   "bin": {
-    "snippet": "./dist/index.js"
+    "snipl": "./dist/src/index.js"
   },
   "scripts": {
-    "build": "tsc",
-    "typecheck": "tsc --noEmit",
+    "build": "tsc -b",
+    "typecheck": "tsc -b",
     "test": "vitest run"
   },
   "dependencies": {
-    "@snipl/core": "workspace:*"
+    "@snipl/core": "workspace:*",
+    "@snipl/registry-schema": "workspace:*",
+    "cac": "^7.0.0"
   },
   "devDependencies": {
+    "@types/node": "^22.20.1",
     "typescript": "^5.7.0",
     "vitest": "^3.0.0"
   }

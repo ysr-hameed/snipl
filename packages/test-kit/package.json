@@ -4,11 +4,14 @@
   "private": true,
   "type": "module",
   "exports": {
-    ".": "./dist/index.js"
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./dist/src/index.js"
+    }
   },
   "scripts": {
-    "build": "tsc",
-    "typecheck": "tsc --noEmit"
+    "build": "tsc -b",
+    "typecheck": "tsc -b"
   },
   "devDependencies": {
     "typescript": "^5.7.0"
