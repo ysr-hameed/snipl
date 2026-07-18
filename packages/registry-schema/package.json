@@ -1,8 +1,29 @@
 {
   "name": "@snipl/registry-schema",
-  "version": "0.0.0",
-  "private": true,
+  "version": "1.0.1",
+  "private": false,
   "type": "module",
+  "license": "MIT",
+  "description": "Zod schema definitions and validation for the snipl registry — registry items, manifests, configs, integrity verification, and SPDX license checks.",
+  "keywords": [
+    "snippet",
+    "snippets",
+    "typescript",
+    "zod",
+    "schema",
+    "validation",
+    "registry",
+    "manifest",
+    "spdx",
+    "integrity"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ysr-hameed/snipl.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ysr-hameed/snipl/issues"
+  },
   "main": "./dist/src/index.js",
   "types": "./src/index.ts",
   "exports": {
@@ -35,5 +56,8 @@
   "devDependencies": {
     "typescript": "^5.7.0",
     "vitest": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=22.0.0"
   }
 }

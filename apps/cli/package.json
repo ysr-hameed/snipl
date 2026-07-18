@@ -1,8 +1,40 @@
 {
   "name": "@snipl/cli",
-  "version": "0.0.0",
-  "private": true,
+  "version": "1.0.1",
+  "private": false,
   "type": "module",
+  "license": "MIT",
+  "description": "Install verified TypeScript utility snippets into any project — sleep, retry, debounce, throttle, memoize, deep-clone, clamp, slugify. Zero-dependency source modules with integrity verification.",
+  "keywords": [
+    "snippet",
+    "snippets",
+    "typescript",
+    "utility",
+    "utilities",
+    "cli",
+    "sleep",
+    "retry",
+    "debounce",
+    "throttle",
+    "memoize",
+    "deep-clone",
+    "clamp",
+    "slugify",
+    "developer-tools",
+    "productivity",
+    "source-code",
+    "code-snippets",
+    "typescript-utilities",
+    "zero-dependency"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ysr-hameed/snipl.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ysr-hameed/snipl/issues"
+  },
+  "homepage": "https://github.com/ysr-hameed/snipl#readme",
   "bin": {
     "snipl": "./dist/src/index.js"
   },
@@ -24,5 +56,8 @@
     "@types/node": "^22.20.1",
     "typescript": "^5.7.0",
     "vitest": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=22.0.0"
   }
 }

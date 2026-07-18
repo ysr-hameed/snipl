@@ -283,8 +283,8 @@ Do not add a module just because it is popular. For example, a `format-date` sni
 
 - [ ] Recruit 20–30 consented beta users, ideally including five monorepo users and five Windows users.
 - [ ] Publish a prerelease package (`@next`) and a short beta guide with known limitations and a security-report channel.
-- [ ] Test operating systems in CI: Linux, macOS, and Windows. Include spaces, Unicode, and case-sensitivity scenarios in paths.
-- [ ] Run compatibility fixtures: plain Node TS, Vite TS, Next.js TS, root-level source, and a package inside a pnpm workspace.
+- [x] Test operating systems in CI: Linux, macOS, and Windows. Include spaces, Unicode, and case-sensitivity scenarios in paths.
+- [x] Run compatibility fixtures: plain Node TS, Vite TS, Next.js TS, root-level source, and a package inside a pnpm workspace.
 - [ ] Offer opt-in, event-only telemetry or a feedback form. Never send source code, paths, configs, command arguments containing paths, or environment variables.
 - [ ] Triage feedback weekly into bugs, usability changes, catalogue requests, and non-goals. Record product decisions, not just issue comments.
 - [ ] Fix every data-loss, integrity, path, license, or incorrect-documentation issue before stable release.
@@ -302,23 +302,23 @@ Do not add a module just because it is popular. For example, a `format-date` sni
 
 ### Release procedure
 
-- [ ] Freeze new features; accept only release blockers, security fixes, and documentation corrections.
-- [ ] Run the complete CI matrix and manual smoke tests on each supported OS.
-- [ ] Verify version consistency across workspace packages, changelog entries, and schema documentation.
-- [ ] Build, test, and inspect the publish tarball from a clean checkout.
-- [ ] Publish release candidate; install it with npm, pnpm, yarn, and bun where supported/documented.
-- [ ] Publish `1.0.0` with provenance, Git tag, signed/verified release process as available, release notes, and an upgrade note.
-- [ ] Validate the public npm install from a separate clean environment after publish.
+- [x] Freeze new features; accept only release blockers, security fixes, and documentation corrections.
+- [x] Run the complete CI matrix and manual smoke tests on each supported OS.
+- [x] Verify version consistency across workspace packages, changelog entries, and schema documentation.
+- [x] Build, test, and inspect the publish tarball from a clean checkout.
+- [x] Publish release candidate; install it with npm, pnpm, yarn, and bun where supported/documented.
+- [x] Publish `1.0.0` with provenance, Git tag, signed/verified release process as available, release notes, and an upgrade note.
+- [x] Validate the public npm install from a separate clean environment after publish.
 - [ ] Announce only after post-publish validation succeeds.
 
 ### Stable-release checklist
 
-- [ ] Format, lint, type-check, unit/integration/E2E tests, and coverage are green.
-- [ ] All `--dry-run`, collision, overwrite, hash, symlink, traversal, interrupted-write, JSON, and exit-code tests are green.
-- [ ] Every public command has `--help` and a documented example.
-- [ ] Every released item has tests, docs, hashes, and licence provenance.
-- [ ] npm account security, support, security reporting, and licence information are public.
-- [ ] No secrets, personal data, telemetry by default, or customer code appear in packages, logs, or fixtures.
+- [x] Format, lint, type-check, unit/integration/E2E tests, and coverage are green.
+- [x] All `--dry-run`, collision, overwrite, hash, symlink, traversal, interrupted-write, JSON, and exit-code tests are green.
+- [x] Every public command has `--help` and a documented example.
+- [x] Every released item has tests, docs, hashes, and licence provenance.
+- [x] npm account security, support, security reporting, and licence information are public.
+- [x] No secrets, personal data, telemetry by default, or customer code appear in packages, logs, or fixtures.
 
 ## Post-v1 roadmap: choose by evidence, one at a time
 
