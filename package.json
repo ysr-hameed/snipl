@@ -2,6 +2,22 @@
   "name": "@snipl/root",
   "private": true,
   "type": "module",
+  "description": "snipl — install verified TypeScript utility snippets into any project. Zero-dependency source ownership with integrity guarantees.",
+  "keywords": [
+    "snippet",
+    "snippets",
+    "typescript",
+    "cli",
+    "utility",
+    "sleep",
+    "retry",
+    "debounce",
+    "throttle",
+    "memoize",
+    "deep-clone",
+    "clamp",
+    "slugify"
+  ],
   "packageManager": "pnpm@11.13.0",
   "engines": {
     "node": ">=22.0.0",
@@ -25,6 +41,5 @@
     "typescript": "^5.7.0",
     "typescript-eslint": "^8.0.0",
     "vitest": "^3.0.0"
-  },
-  "version": "0.0.1-next.0"
+  }
 }

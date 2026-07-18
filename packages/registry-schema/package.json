@@ -4,6 +4,19 @@
   "private": false,
   "type": "module",
   "license": "MIT",
+  "description": "Zod schema definitions and validation for the snipl registry — registry items, manifests, configs, integrity verification, and SPDX license checks.",
+  "keywords": [
+    "snippet",
+    "snippets",
+    "typescript",
+    "zod",
+    "schema",
+    "validation",
+    "registry",
+    "manifest",
+    "spdx",
+    "integrity"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ysr-hameed/snipl.git"
