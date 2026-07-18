@@ -1,3 +1,4 @@
+import * as crypto from 'crypto';
 import { RegistryItemSchema, safeParse } from '@snipl/registry-schema';
 import type { RegistryItem } from '@snipl/registry-schema';
 
@@ -98,6 +99,8 @@ export class BuiltinRegistryResolver implements RegistryResolver {
 }
 
 function createBuiltinItem(name: string, overrides: Partial<RegistryItem>): RegistryItem {
+  const content = `// ${name} — placeholder for official implementation\n`;
+  const sha256 = crypto.createHash('sha256').update(content, 'utf-8').digest('hex');
   const item: RegistryItem = {
     schemaVersion: 1,
     name,
@@ -110,8 +113,8 @@ function createBuiltinItem(name: string, overrides: Partial<RegistryItem>): Regi
     files: [
       {
         path: `${name}.ts`,
-        content: `// ${name} — placeholder for official implementation\n`,
-        sha256: '0000000000000000000000000000000000000000000000000000000000000000',
+        content,
+        sha256,
       },
     ],
     dependencies: [],

@@ -12,6 +12,10 @@ import { searchCommand } from './commands/search.js';
 import type { SearchOptions } from './commands/search.js';
 import { viewCommand } from './commands/view.js';
 import type { ViewOptions } from './commands/view.js';
+import { addCommand } from './commands/add.js';
+import type { AddOptions } from './commands/add.js';
+import { statusCommand } from './commands/status.js';
+import type { StatusOptions } from './commands/status.js';
 import { ExitCode } from './exit-codes.js';
 
 interface GlobalOptions {
@@ -126,6 +130,42 @@ cli.command('view <name>', 'View item details').action((name: string, options: G
         name,
         json: opts.json ?? false,
       } satisfies ViewOptions);
+      process.exit(exitCode);
+    } catch (err) {
+      handleError(err, opts.json ?? false);
+    }
+  });
+});
+
+cli
+  .command('add <name>', 'Install an item')
+  .option('--path <path>', 'Explicit destination root')
+  .action(async (name: string, options: GlobalOptions) => {
+    const opts = parseGlobalOptions(options);
+    const cwd = resolveCwd(opts.cwd ?? '.');
+    try {
+      const resolver = new BuiltinRegistryResolver();
+      const exitCode = await addCommand(resolver, name, {
+        cwd,
+        json: opts.json ?? false,
+        yes: opts.yes ?? false,
+        dryRun: opts.dryRun ?? false,
+        overwrite: opts.overwrite ?? false,
+      } satisfies AddOptions);
+      process.exit(exitCode);
+    } catch (err) {
+      handleError(err, opts.json ?? false);
+    }
+  });
+
+cli.command('status', 'Check installed items').action((options: GlobalOptions) => {
+  withCwd(options, () => {
+    const opts = parseGlobalOptions(options);
+    try {
+      const exitCode = statusCommand({
+        cwd: opts.cwd ?? '.',
+        json: opts.json ?? false,
+      } satisfies StatusOptions);
       process.exit(exitCode);
     } catch (err) {
       handleError(err, opts.json ?? false);

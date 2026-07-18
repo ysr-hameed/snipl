@@ -14,15 +14,15 @@ type(scope): description
 
 ### Types
 
-| Type | Kab use karein | Example |
-|------|----------------|---------|
-| `feat` | New feature | `feat(cli): add init command` |
-| `fix` | Bug fix | `fix(core): resolve path traversal check` |
-| `docs` | Documentation | `docs: add git contribution guide` |
-| `chore` | Maintenance | `chore: update dependencies` |
+| Type       | Kab use karein               | Example                                    |
+| ---------- | ---------------------------- | ------------------------------------------ |
+| `feat`     | New feature                  | `feat(cli): add init command`              |
+| `fix`      | Bug fix                      | `fix(core): resolve path traversal check`  |
+| `docs`     | Documentation                | `docs: add git contribution guide`         |
+| `chore`    | Maintenance                  | `chore: update dependencies`               |
 | `refactor` | Code change (no feature/fix) | `refactor(core): extract write-plan logic` |
-| `test` | Tests | `test(schema): add invalid fixture tests` |
-| `style` | Formatting only | `style: run prettier` |
+| `test`     | Tests                        | `test(schema): add invalid fixture tests`  |
+| `style`    | Formatting only              | `style: run prettier`                      |
 
 ### Examples
 
@@ -213,17 +213,17 @@ git checkout -b feat/init-command
 git add apps/cli/src/commands/init.ts
 git commit -m "feat(cli): implement init command"
 git push origin feat/init-command
-gh pr create --title "feat(cli): implement init command" --body "..." 
+gh pr create --title "feat(cli): implement init command" --body "..."
 ```
 
 ## 10. Merge vs Rebase
 
-| Situation | Use |
-|-----------|-----|
-| Public branch (shared with team) | **Merge** — history preserve hoti hai |
-| Personal feature branch | **Rebase** — clean linear history |
-| PR with conflicts | **Rebase** on main, resolve conflicts |
-| You want to preserve context | **Merge commit** — batata hai "ye PR merge hua" |
+| Situation                        | Use                                             |
+| -------------------------------- | ----------------------------------------------- |
+| Public branch (shared with team) | **Merge** — history preserve hoti hai           |
+| Personal feature branch          | **Rebase** — clean linear history               |
+| PR with conflicts                | **Rebase** on main, resolve conflicts           |
+| You want to preserve context     | **Merge commit** — batata hai "ye PR merge hua" |
 
 > **Suggestion:** Iss project ke liye **squash merge** use karo PRs me — ek feature ek commit.
 
