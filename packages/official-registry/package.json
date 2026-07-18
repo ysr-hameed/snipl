@@ -1,9 +1,26 @@
 {
   "name": "@snipl/official-registry",
-  "version": "1.0.0-next.0",
+  "version": "1.0.1",
   "private": false,
   "type": "module",
   "license": "MIT",
+  "description": "Official built-in snippet registry for snipl — TypeScript utility modules including sleep, retry, debounce, throttle, memoize, deep-clone, clamp, and slugify.",
+  "keywords": [
+    "snippet",
+    "snippets",
+    "typescript",
+    "utility",
+    "sleep",
+    "retry",
+    "debounce",
+    "throttle",
+    "memoize",
+    "deep-clone",
+    "clamp",
+    "slugify",
+    "registry",
+    "source-code"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ysr-hameed/snipl.git"
