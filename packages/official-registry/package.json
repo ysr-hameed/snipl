@@ -3,10 +3,25 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
+  "main": "./dist/src/index.js",
+  "types": "./src/index.ts",
   "exports": {
     ".": {
       "types": "./src/index.ts",
       "default": "./dist/src/index.js"
+    }
+  },
+  "files": [
+    "dist/src",
+    "!dist/src/**/*.tsbuildinfo"
+  ],
+  "publishConfig": {
+    "types": "./dist/src/index.d.ts",
+    "exports": {
+      ".": {
+        "types": "./dist/src/index.d.ts",
+        "default": "./dist/src/index.js"
+      }
     }
   },
   "scripts": {

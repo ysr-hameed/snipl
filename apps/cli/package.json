@@ -6,6 +6,10 @@
   "bin": {
     "snipl": "./dist/src/index.js"
   },
+  "files": [
+    "dist/src",
+    "!dist/src/**/*.tsbuildinfo"
+  ],
   "scripts": {
     "build": "tsc -b",
     "typecheck": "tsc -b",
